@@ -161,7 +161,7 @@
         // After the last frame rendered before the map enters an "idle" state.
         map.on('idle', () => {
             // If these two layers were not added to the map, abort
-            if (!map.getLayer('seahawks') || !map.getLayer('TransitStops') || !map.getLayer('SeahawksxTransitStops') || map.getLayer('Transpo&Roadways')) {
+            if (!map.getLayer('seahawks') || !map.getLayer('TransitStops') || !map.getLayer('SeahawksxTransitStops') || !map.getLayer('Transpo&Roadways')) {
                 return;
             }
 
