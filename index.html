@@ -84,7 +84,7 @@
 
         map.on('load', () => { //simplifying the function statement: arrow with brackets to define a function
 
-            map.addSource('Seahawks-tiles', {
+            map.addSource('seahawks-tiles', {
                 'type': 'raster',
                 'tiles': [
                     'assets/seahawks/{z}/{x}/{y}.png'
@@ -121,12 +121,12 @@
             });
             
             map.addLayer({
-                'id': 'Seahawks',
+                'id': 'seahawks',
                 'type': 'raster',
                 'layout': {
                     'visibility': 'none'
                 },
-                'source': 'Seahawks-tiles'
+                'source': 'seahawks-tiles'
             });
 
             map.addLayer({
@@ -161,12 +161,12 @@
         // After the last frame rendered before the map enters an "idle" state.
         map.on('idle', () => {
             // If these two layers were not added to the map, abort
-            if (!map.getLayer('Seahawks') || !map.getLayer('TransitStops') || !map.getLayer('SeahawksxTransitStops') || map.getLayer('Transpo&Roadways')) {
+            if (!map.getLayer('seahawks') || !map.getLayer('TransitStops') || !map.getLayer('SeahawksxTransitStops') || map.getLayer('Transpo&Roadways')) {
                 return;
             }
 
             // Enumerate ids of the layers.
-            const toggleableLayerIds = ['Seahawks', 'TransitStops','SeahawksxTransitStops', 'Transpo&Roadways'];
+            const toggleableLayerIds = ['seahawks', 'TransitStops','SeahawksxTransitStops', 'Transpo&Roadways'];
 
             // Set up the corresponding toggle button for each layer.
             for (const id of toggleableLayerIds) {
